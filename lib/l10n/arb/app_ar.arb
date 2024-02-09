@@ -1,0 +1,18 @@
+{
+    "@@locale": "ar",
+    "counterAppBarTitle": "العداد",
+    "@counterAppBarTitle": {
+        "description": "تم عرض النص في AppBar على صفحة المتصفح"
+    },
+    "helloWorld": "مرحبا بالعالم",
+    "hello": "مرحبا {userName}",
+    "@hello": {
+        "description": "A message with a single parameter",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Bob"
+            }
+        }
+    }
+}
