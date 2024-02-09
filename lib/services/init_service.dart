@@ -8,10 +8,12 @@ class InitService {
   final memoizer = AsyncMemoizer<void>();
 
   Future<void> init() {
-    return memoizer.runOnce(() => Future.wait([
-          _actualInit(),
-          Future.delayed(const Duration(seconds: 3)),
-        ]));
+    return memoizer.runOnce(
+      () => Future.wait([
+        _actualInit(),
+        Future.delayed(const Duration(seconds: 3), () {}),
+      ]),
+    );
   }
 
   Future<void> _actualInit() async {

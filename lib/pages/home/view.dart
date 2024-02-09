@@ -1,6 +1,6 @@
 import 'package:bdaya_flutter_common/bdaya_flutter_common.dart';
-import 'controller.dart';
 import 'package:flutter/material.dart';
+import 'package:social_media/pages/home/controller.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -33,8 +33,33 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [Text('Category'), Column()],
+      body: ListView(
+        children: [
+          const Text('Category'),
+          Column(
+            children: List.generate(20, (index) {
+              return ListTile(
+                title: Text(index.toString()),
+              );
+            }),
+          ),
+          const Text('Skintype'),
+          Column(
+            children: List.generate(20, (index) {
+              return ListTile(
+                title: Text(index.toString()),
+              );
+            }),
+          ),
+          const Text('Featured products'),
+          Column(
+            children: List.generate(20, (index) {
+              return ListTile(
+                title: Text(index.toString()),
+              );
+            }),
+          ),
+        ],
       ),
     );
   }

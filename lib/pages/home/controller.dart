@@ -1,7 +1,7 @@
 import 'package:bdaya_flutter_common/bdaya_flutter_common.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:social_media/services/grpc_service.dart';
+// import 'package:social_media/services/grpc_service.dart';
 import 'package:social_media/services/routing_service.dart';
 
 @lazySingleton

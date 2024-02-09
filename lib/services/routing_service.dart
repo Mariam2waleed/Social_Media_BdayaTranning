@@ -48,8 +48,7 @@ class RoutingService {
         name: AppRouteNames.posts,
         builder: (context, state) => PostsView.hooked(),
         redirect: (context, state) {
-          //put route permissions for auth
-          //put route permissions for specific post
+          //put route permissions
           if (userService.currentUser.of(context) == null) {
             return state.namedLocation(
               AppRouteNames.auth,
@@ -64,6 +63,7 @@ class RoutingService {
             name: AppRouteNames.postDetails,
             builder: (context, state) => PostDetailsView.hooked(),
             redirect: (context, state) {
+              return null;
               //put route permissions for auth
               /////////put route permissions for specific post
             },
@@ -74,8 +74,8 @@ class RoutingService {
                 name: AppRouteNames.postComments,
                 builder: (context, state) => const SizedBox.shrink(),
                 redirect: (context, state) {
-                  //put route permissions for auth
-                  //put route permissions for specific post
+                  return null;
+                  //put route permissions
                 },
               ),
               //  /posts/{id}/likes
@@ -84,8 +84,8 @@ class RoutingService {
                 name: AppRouteNames.postLikes,
                 builder: (context, state) => const SizedBox.shrink(),
                 redirect: (context, state) {
-                  //put route permissions for auth
-                  //put route permissions for specific post
+                  return null;
+                  //put route permissions
                 },
               ),
               //  /posts/{id}/shares
@@ -94,8 +94,8 @@ class RoutingService {
                 name: AppRouteNames.postShares,
                 builder: (context, state) => const SizedBox.shrink(),
                 redirect: (context, state) {
-                  //put route permissions for auth
-                  //put route permissions for specific post
+                  return null;
+                  //put route permissions
                 },
               ),
             ],

@@ -6,7 +6,7 @@ import 'package:social_media/get_it_config.dart';
 import 'package:social_media/l10n/l10n.dart';
 import 'package:social_media/services/init_service.dart';
 import 'package:social_media/services/routing_service.dart';
-import 'package:social_media/services/user_service.dart';
+// import 'package:social_media/services/user_service.dart';
 // import 'package:social_media/test_widget/controller.dart';
 
 final memoizer = AsyncMemoizer<void>();
