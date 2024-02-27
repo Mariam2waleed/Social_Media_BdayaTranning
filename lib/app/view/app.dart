@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:async/async.dart';
 import 'package:bdaya_shared_value/bdaya_shared_value.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +26,7 @@ class App extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
+        scrollBehavior: MaterialScrollBehavior().copyWith(dragDevices: {...PointerDeviceKind.values}),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         routerConfig: getIt<RoutingService>().router,

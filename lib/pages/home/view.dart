@@ -32,32 +32,68 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Slivers
     return Scaffold(
-      body: ListView(
-        children: [
-          const Text('Category'),
-          Column(
-            children: List.generate(20, (index) {
-              return ListTile(
-                title: Text(index.toString()),
-              );
-            }),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar.large(),
+          const SliverToBoxAdapter(
+            child: Text('Categories'),
           ),
-          const Text('Skintype'),
-          Column(
-            children: List.generate(20, (index) {
-              return ListTile(
-                title: Text(index.toString()),
+          Builder(
+            builder: (context) {
+              final categories =
+                  controller.categoriesService.categoriesListRx.of(context);
+              return SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 200,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: categories
+                        .map(
+                          (e) => Column(
+                            key: Key(e.id),
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.network(e.imageUrl),
+                              Text(e.name),
+                            ],
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
               );
-            }),
+            },
           ),
-          const Text('Featured products'),
-          Column(
-            children: List.generate(20, (index) {
+          SliverList.builder(
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              controller.logger.info('Rendering category $index');
               return ListTile(
-                title: Text(index.toString()),
+                title: Text('Category: $index'),
               );
-            }),
+            },
+          ),
+          SliverToBoxAdapter(child: Text('Skin Type')),
+          SliverList.builder(
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              controller.logger.info('Rendering Skin Type $index');
+              return ListTile(
+                title: Text('Skin Type: $index'),
+              );
+            },
+          ),
+          SliverToBoxAdapter(child: Text('Featued products')),
+          SliverList.builder(
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              controller.logger.info('Rendering Featued products $index');
+              return ListTile(
+                title: Text('Featued products: $index'),
+              );
+            },
           ),
         ],
       ),

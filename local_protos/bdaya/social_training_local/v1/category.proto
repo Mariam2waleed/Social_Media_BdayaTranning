@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package bdaya.social_training_local.v1;
+
+import "bdaya/social_training/v1/common.proto";
+
+message CategoryDto {
+    string id = 1;
+    string name =2;
+    string image_url =3;
+}
+
+message TestOptions {
+    bdaya.social_training.v1.SortDirection current_sort_direction = 1;
+}
