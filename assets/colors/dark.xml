@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_c1" type="material">#282B59</color>
+    <color name="dark_c2">#5C5D73</color>
+    <color name="dark_c3">#283059</color>
+    <color name="dark_c4">#222640</color>
+    <color name="dark_c5">#F2F2F2</color>
+</resources>

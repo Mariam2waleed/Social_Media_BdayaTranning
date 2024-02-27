@@ -23,6 +23,13 @@ dependencies:
   url_strategy: ^0.2.0
   # mason: ^0.1.0-dev.52  ####
 
+  # #UI
+  # cupertino_icons: ^1.0.2
+  # flutter_adaptive_scaffold: ^0.1.0
+  # scroll_snap_list: ^0.9.1
+  # smooth_page_indicator: ^1.0.1
+  # url_launcher: ^6.1.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -35,4 +42,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:               ###
+    - assets/images/    ###
+    - assets/colors/    ###
   generate: true

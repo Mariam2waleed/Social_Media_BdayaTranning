@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_c1" type="material">#242540</color>
+    <color name="light_c2">#5C5D73</color>
+    <color name="light_c3">#283059</color>
+    <color name="light_c4">#8BD1D9</color>
+    <color name="light_c5">#F2F2F2</color>
+</resources>

@@ -35,9 +35,9 @@ class AuthView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('auth page'),
+      body: const Text('auth page'),
       floatingActionButton: FloatingActionButton.extended(
-        label: Text('Login'),
+        label: const Text('Login'),
         onPressed: () {
           getIt<UserService>().currentUser.$ = 'Mariam';
         },

@@ -13,6 +13,8 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   };
 
   Logger.root.onRecord.listen(bdayaOnRecordHandlerFactory());
+  setPathUrlStrategy();
+
 
   getIt.allowReassignment = true;
 
