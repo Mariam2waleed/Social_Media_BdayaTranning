@@ -20,7 +20,12 @@ class PostDetailsReactiveModel {
 class Address {
   Address({
     @FormControlAnnotation<String>() required this.id,
-    @FormControlAnnotation<String>() required this.line1,
+    @FormControlAnnotation<String>(
+      validators: [
+        Line1Validator(),
+      ],
+    )
+    required this.line1,
     @FormControlAnnotation<String>() required this.line2,
     @FormControlAnnotation<String>() required this.postalCode,
   });
@@ -29,4 +34,20 @@ class Address {
   final String? line1;
   final String? line2;
   final String? postalCode;
+}
+
+class Line1Validator extends Validator<String> {
+  const Line1Validator();
+  @override
+  Map<String, dynamic>? validate(AbstractControl<String> control) {
+    final value = control.value;
+    if (value != null) {
+      if (value.startsWith('a')) {
+        return {
+          'stratsWithA': true,
+        };
+      }
+    }
+    return null;
+  }
 }

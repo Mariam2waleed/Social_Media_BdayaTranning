@@ -32,14 +32,7 @@ final $typed_data.Uint8List categoryDtoDescriptor = $convert.base64Decode(
 const TestOptions$json = {
   '1': 'TestOptions',
   '2': [
-    {
-      '1': 'current_sort_direction',
-      '3': 1,
-      '4': 1,
-      '5': 14,
-      '6': '.bdaya.social_training.v1.SortDirection',
-      '10': 'currentSortDirection',
-    },
+    {'1': 'current_sort_direction', '3': 1, '4': 1, '5': 14, '6': '.bdaya.social_training.v1.SortDirection', '10': 'currentSortDirection'},
   ],
 };
 

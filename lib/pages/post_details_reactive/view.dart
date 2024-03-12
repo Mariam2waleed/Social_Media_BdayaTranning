@@ -51,6 +51,7 @@ class PostDetailsReactiveView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PostDetailsReactiveModelFormBuilder(
+      key: ValueKey(controller.formVersionRx.of(context)),
       model: controller.initialModelRx.of(context),
       initState: (context, formModel) {
         controller.formGroupRx.$ = formModel;
@@ -121,46 +122,47 @@ class AddressWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ReactiveAddressForm(
-      form: formGroup,
-      child: Row(
-        children: [
-          Column(
+    print(formGroup.form);
+    return Row(
+      children: [
+        Column(
+          children: [
+            IconButton(
+              onPressed: onDelete,
+              icon: const Icon(Icons.delete),
+            ),
+            Text(index.toString()),
+          ],
+        ),
+        Expanded(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              IconButton(
-                onPressed: onDelete,
-                icon: const Icon(Icons.delete),
+              ReactiveTextField<String>(
+                // formControlName: formGroup.line1ControlPath(),
+                formControl: formGroup.line1Control,
+                decoration: const InputDecoration(
+                  labelText: 'Line 1',
+                ),
               ),
-              Text(index.toString()),
+              ReactiveTextField<String>(
+                // formControlName: formGroup.line2ControlPath(),
+                formControl: formGroup.line2Control,
+                decoration: const InputDecoration(
+                  labelText: 'Line 2',
+                ),
+              ),
+              ReactiveTextField<String>(
+                // formControlName: formGroup.postalCodeControlPath(), 
+                formControl: formGroup.postalCodeControl,
+                decoration: const InputDecoration(
+                  labelText: 'Postal Code',
+                ),
+              ),
             ],
           ),
-          Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ReactiveTextField<String>(
-                  formControl: formGroup.line1Control,
-                  decoration: const InputDecoration(
-                    labelText: 'Line 1',
-                  ),
-                ),
-                ReactiveTextField<String>(
-                  formControl: formGroup.line2Control,
-                  decoration: const InputDecoration(
-                    labelText: 'Line 2',
-                  ),
-                ),
-                ReactiveTextField<String>(
-                  formControl: formGroup.postalCodeControl,
-                  decoration: const InputDecoration(
-                    labelText: 'Postal Code',
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

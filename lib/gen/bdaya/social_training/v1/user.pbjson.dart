@@ -27,3 +27,4 @@ const UserInfo$json = {
 final $typed_data.Uint8List userInfoDescriptor = $convert.base64Decode(
     'CghVc2VySW5mbxIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIbCglpbWFnZV'
     '91cmwYAyABKAlSCGltYWdlVXJs');
+

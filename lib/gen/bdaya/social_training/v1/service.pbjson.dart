@@ -92,7 +92,7 @@ const GetPostRequest$json = {
 
 /// Descriptor for `GetPostRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPostRequestDescriptor = $convert.base64Decode(
-    'Cg5HZXRQb3N0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=',);
+    'Cg5HZXRQb3N0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
 
 @$core.Deprecated('Use getPostResponseDescriptor instead')
 const GetPostResponse$json = {
@@ -114,7 +114,7 @@ const CreatePostRequest$json = {
 
 /// Descriptor for `CreatePostRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createPostRequestDescriptor = $convert.base64Decode(
-    'ChFDcmVhdGVQb3N0UmVxdWVzdA==',);
+    'ChFDcmVhdGVQb3N0UmVxdWVzdA==');
 
 @$core.Deprecated('Use createPostResponseDescriptor instead')
 const CreatePostResponse$json = {
@@ -139,7 +139,7 @@ const UpdatePostRequest$json = {
 
 /// Descriptor for `UpdatePostRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updatePostRequestDescriptor = $convert.base64Decode(
-    'ChFVcGRhdGVQb3N0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=',);
+    'ChFVcGRhdGVQb3N0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
 
 @$core.Deprecated('Use updatePostResponseDescriptor instead')
 const UpdatePostResponse$json = {
@@ -164,7 +164,7 @@ const DeletePostRequest$json = {
 
 /// Descriptor for `DeletePostRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deletePostRequestDescriptor = $convert.base64Decode(
-    'ChFEZWxldGVQb3N0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=',);
+    'ChFEZWxldGVQb3N0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
 
 @$core.Deprecated('Use deletePostResponseDescriptor instead')
 const DeletePostResponse$json = {
@@ -173,4 +173,5 @@ const DeletePostResponse$json = {
 
 /// Descriptor for `DeletePostResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deletePostResponseDescriptor = $convert.base64Decode(
-    'ChJEZWxldGVQb3N0UmVzcG9uc2U=',);
+    'ChJEZWxldGVQb3N0UmVzcG9uc2U=');
+

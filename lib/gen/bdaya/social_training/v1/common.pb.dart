@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'package:social_media/gen/google/protobuf/timestamp.pb.dart' as $0;
+import '../../../google/protobuf/timestamp.pb.dart' as $0;
 
 export 'common.pbenum.dart';
 
@@ -32,64 +32,41 @@ class InfiniteScrollPaginationInfo extends $pb.GeneratedMessage {
     return $result;
   }
   InfiniteScrollPaginationInfo._() : super();
-  factory InfiniteScrollPaginationInfo.fromBuffer(
-    $core.List<$core.int> i, [
-    $pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY,
-  ]) =>
-      create()..mergeFromBuffer(i, r);
-  factory InfiniteScrollPaginationInfo.fromJson(
-    $core.String i, [
-    $pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY,
-  ]) =>
-      create()..mergeFromJson(i, r);
+  factory InfiniteScrollPaginationInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InfiniteScrollPaginationInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-    _omitMessageNames ? '' : 'InfiniteScrollPaginationInfo',
-    package: const $pb.PackageName(
-      _omitMessageNames ? '' : 'bdaya.social_training.v1',
-    ),
-    createEmptyInstance: create,
-  )
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InfiniteScrollPaginationInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'bdaya.social_training.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.O3)
     ..aOS(2, _omitFieldNames ? '' : 'pageToken')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  InfiniteScrollPaginationInfo clone() =>
-      InfiniteScrollPaginationInfo()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  InfiniteScrollPaginationInfo copyWith(
-    void Function(InfiniteScrollPaginationInfo) updates,
-  ) =>
-      super.copyWith(
-        (message) => updates(message as InfiniteScrollPaginationInfo),
-      ) as InfiniteScrollPaginationInfo;
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InfiniteScrollPaginationInfo clone() => InfiniteScrollPaginationInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InfiniteScrollPaginationInfo copyWith(void Function(InfiniteScrollPaginationInfo) updates) => super.copyWith((message) => updates(message as InfiniteScrollPaginationInfo)) as InfiniteScrollPaginationInfo;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static InfiniteScrollPaginationInfo create() =>
-      InfiniteScrollPaginationInfo._();
+  static InfiniteScrollPaginationInfo create() => InfiniteScrollPaginationInfo._();
   InfiniteScrollPaginationInfo createEmptyInstance() => create();
-  static $pb.PbList<InfiniteScrollPaginationInfo> createRepeated() =>
-      $pb.PbList<InfiniteScrollPaginationInfo>();
+  static $pb.PbList<InfiniteScrollPaginationInfo> createRepeated() => $pb.PbList<InfiniteScrollPaginationInfo>();
   @$core.pragma('dart2js:noInline')
-  static InfiniteScrollPaginationInfo getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<InfiniteScrollPaginationInfo>(create);
+  static InfiniteScrollPaginationInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InfiniteScrollPaginationInfo>(create);
   static InfiniteScrollPaginationInfo? _defaultInstance;
 
   /// The maximum number of items to return.
   @$pb.TagNumber(1)
   $core.int get pageSize => $_getIZ(0);
   @$pb.TagNumber(1)
-  set pageSize($core.int v) {
-    $_setSignedInt32(0, v);
-  }
-
+  set pageSize($core.int v) { $_setSignedInt32(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasPageSize() => $_has(0);
   @$pb.TagNumber(1)
@@ -99,10 +76,7 @@ class InfiniteScrollPaginationInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get pageToken => $_getSZ(1);
   @$pb.TagNumber(2)
-  set pageToken($core.String v) {
-    $_setString(1, v);
-  }
-
+  set pageToken($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPageToken() => $_has(1);
   @$pb.TagNumber(2)
@@ -124,45 +98,25 @@ class DateFilter extends $pb.GeneratedMessage {
     return $result;
   }
   DateFilter._() : super();
-  factory DateFilter.fromBuffer(
-    $core.List<$core.int> i, [
-    $pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY,
-  ]) =>
-      create()..mergeFromBuffer(i, r);
-  factory DateFilter.fromJson(
-    $core.String i, [
-    $pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY,
-  ]) =>
-      create()..mergeFromJson(i, r);
+  factory DateFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DateFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-    _omitMessageNames ? '' : 'DateFilter',
-    package: const $pb.PackageName(
-      _omitMessageNames ? '' : 'bdaya.social_training.v1',
-    ),
-    createEmptyInstance: create,
-  )
-    ..aOM<$0.Timestamp>(
-      1,
-      _omitFieldNames ? '' : 'startDate',
-      subBuilder: $0.Timestamp.create,
-    )
-    ..aOM<$0.Timestamp>(
-      2,
-      _omitFieldNames ? '' : 'endDate',
-      subBuilder: $0.Timestamp.create,
-    )
-    ..hasRequiredFields = false;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DateFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'bdaya.social_training.v1'), createEmptyInstance: create)
+    ..aOM<$0.Timestamp>(1, _omitFieldNames ? '' : 'startDate', subBuilder: $0.Timestamp.create)
+    ..aOM<$0.Timestamp>(2, _omitFieldNames ? '' : 'endDate', subBuilder: $0.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   DateFilter clone() => DateFilter()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  DateFilter copyWith(void Function(DateFilter) updates) =>
-      super.copyWith((message) => updates(message as DateFilter)) as DateFilter;
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DateFilter copyWith(void Function(DateFilter) updates) => super.copyWith((message) => updates(message as DateFilter)) as DateFilter;
 
   $pb.BuilderInfo get info_ => _i;
 
@@ -171,17 +125,13 @@ class DateFilter extends $pb.GeneratedMessage {
   DateFilter createEmptyInstance() => create();
   static $pb.PbList<DateFilter> createRepeated() => $pb.PbList<DateFilter>();
   @$core.pragma('dart2js:noInline')
-  static DateFilter getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<DateFilter>(create);
+  static DateFilter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DateFilter>(create);
   static DateFilter? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.Timestamp get startDate => $_getN(0);
   @$pb.TagNumber(1)
-  set startDate($0.Timestamp v) {
-    setField(1, v);
-  }
-
+  set startDate($0.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStartDate() => $_has(0);
   @$pb.TagNumber(1)
@@ -192,10 +142,7 @@ class DateFilter extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $0.Timestamp get endDate => $_getN(1);
   @$pb.TagNumber(2)
-  set endDate($0.Timestamp v) {
-    setField(2, v);
-  }
-
+  set endDate($0.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEndDate() => $_has(1);
   @$pb.TagNumber(2)
@@ -204,6 +151,6 @@ class DateFilter extends $pb.GeneratedMessage {
   $0.Timestamp ensureEndDate() => $_ensure(1);
 }
 
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames =
-    $core.bool.fromEnvironment('protobuf.omit_message_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -13,21 +13,15 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'package:social_media/gen/google/api/http.pb.dart' as $4;
+import 'http.pb.dart' as $4;
 
 class Annotations {
-  static final http = $pb.Extension<$4.HttpRule>(
-      _omitMessageNames ? '' : 'google.protobuf.MethodOptions',
-      _omitFieldNames ? '' : 'http',
-      72295728,
-      $pb.PbFieldType.OM,
-      defaultOrMaker: $4.HttpRule.getDefault,
-      subBuilder: $4.HttpRule.create,);
+  static final http = $pb.Extension<$4.HttpRule>(_omitMessageNames ? '' : 'google.protobuf.MethodOptions', _omitFieldNames ? '' : 'http', 72295728, $pb.PbFieldType.OM, defaultOrMaker: $4.HttpRule.getDefault, subBuilder: $4.HttpRule.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(http);
   }
 }
 
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames =
-    $core.bool.fromEnvironment('protobuf.omit_message_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

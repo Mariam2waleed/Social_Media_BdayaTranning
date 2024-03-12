@@ -14,9 +14,9 @@ class PostsService {
         for (var i = 0; i <3; i++) 
         AddressDto(
           id: const UuidV4().generate(),
-          line1: StringValue(value: 'line1 value $id'),
-          line2: StringValue(value: 'line2 value $id'),
-          postalCode: StringValue(value: 'postal code value $id'),
+          line1: StringValue(value: 'address $i line1 value $id'),
+          line2: StringValue(value: 'address $i line2 value $id'),
+          postalCode: StringValue(value: 'address $i postal code value $id'),
         ),
       ],
     );

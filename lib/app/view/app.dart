@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:async/async.dart';
 import 'package:bdaya_shared_value/bdaya_shared_value.dart';
 import 'package:flutter/material.dart';
+import 'package:reactive_forms_annotations/reactive_forms_annotations.dart';
 import 'package:social_media/app/view/splash.dart';
 import 'package:social_media/get_it_config.dart';
 import 'package:social_media/l10n/l10n.dart';
@@ -18,35 +19,40 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SharedValue.wrapApp(
-      MaterialApp.router(
-        theme: ThemeData(
-          appBarTheme: AppBarTheme(
-            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+    return ReactiveFormConfig(
+      validationMessages: {
+        'startWithA': (error) => 'Value should not start with A $error',
+      },  
+      child: SharedValue.wrapApp(
+        MaterialApp.router(
+          theme: ThemeData(
+            appBarTheme: AppBarTheme(
+              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+            ),
+            useMaterial3: true,
           ),
-          useMaterial3: true,
+          scrollBehavior: const MaterialScrollBehavior().copyWith(
+            dragDevices: {...PointerDeviceKind.values},
+          ),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          debugShowCheckedModeBanner: false,
+          routerConfig: getIt<RoutingService>().router,
+          builder: (context, child) {
+            return FutureBuilder(
+              future: getIt<InitService>().init(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return ErrorWidget(snapshot.error!);
+                }
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return child!;
+                }
+                return const SplashScreen();
+              },
+            );
+          },
         ),
-        scrollBehavior: const MaterialScrollBehavior().copyWith(
-          dragDevices: {...PointerDeviceKind.values},
-        ),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        debugShowCheckedModeBanner: false,
-        routerConfig: getIt<RoutingService>().router,
-        builder: (context, child) {
-          return FutureBuilder(
-            future: getIt<InitService>().init(),
-            builder: (context, snapshot) {
-              if (snapshot.hasError) {
-                return ErrorWidget(snapshot.error!);
-              }
-              if (snapshot.connectionState == ConnectionState.done) {
-                return child!;
-              }
-              return const SplashScreen();
-            },
-          );
-        },
       ),
     );
   }

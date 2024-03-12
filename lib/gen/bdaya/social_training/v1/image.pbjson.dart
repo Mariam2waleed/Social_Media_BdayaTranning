@@ -20,14 +20,7 @@ const AppImage$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'width', '3': 2, '4': 1, '5': 2, '10': 'width'},
     {'1': 'height', '3': 3, '4': 1, '5': 2, '10': 'height'},
-    {
-      '1': 'taken_date_time',
-      '3': 5,
-      '4': 1,
-      '5': 11,
-      '6': '.google.protobuf.Timestamp',
-      '10': 'takenDateTime',
-    },
+    {'1': 'taken_date_time', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'takenDateTime'},
     {'1': 'name', '3': 6, '4': 1, '5': 9, '10': 'name'},
     {'1': 'url', '3': 7, '4': 1, '5': 9, '10': 'url'},
   ],
@@ -39,3 +32,4 @@ final $typed_data.Uint8List appImageDescriptor = $convert.base64Decode(
     'dodBgDIAEoAlIGaGVpZ2h0EkIKD3Rha2VuX2RhdGVfdGltZRgFIAEoCzIaLmdvb2dsZS5wcm90'
     'b2J1Zi5UaW1lc3RhbXBSDXRha2VuRGF0ZVRpbWUSEgoEbmFtZRgGIAEoCVIEbmFtZRIQCgN1cm'
     'wYByABKAlSA3VybA==');
+

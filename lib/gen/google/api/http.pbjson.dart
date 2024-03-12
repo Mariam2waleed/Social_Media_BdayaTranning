@@ -71,3 +71,4 @@ const CustomHttpPattern$json = {
 final $typed_data.Uint8List customHttpPatternDescriptor = $convert.base64Decode(
     'ChFDdXN0b21IdHRwUGF0dGVybhISCgRraW5kGAEgASgJUgRraW5kEhIKBHBhdGgYAiABKAlSBH'
     'BhdGg=');
+

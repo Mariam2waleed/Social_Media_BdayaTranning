@@ -968,7 +968,7 @@ class AddressForm implements FormModel<Address> {
             touched: false),
         line1ControlName: FormControl<String>(
             value: address?.line1,
-            validators: [],
+            validators: [Line1Validator()],
             asyncValidators: [],
             asyncValidatorsDebounceTime: 250,
             disabled: false,

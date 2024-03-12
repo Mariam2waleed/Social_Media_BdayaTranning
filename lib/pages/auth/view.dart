@@ -39,7 +39,7 @@ class AuthView extends StatelessWidget {
       floatingActionButton: FloatingActionButton.extended(
         label: const Text('Login'),
         onPressed: () {
-          getIt<UserService>().currentUser.$ = 'Mariam';
+          getIt<UserService>().login();
         },
       ),
     );

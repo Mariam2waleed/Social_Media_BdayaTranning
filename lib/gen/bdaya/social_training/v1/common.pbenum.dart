@@ -14,23 +14,21 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class SortDirection extends $pb.ProtobufEnum {
-  const SortDirection._($core.int v, $core.String n) : super(v, n);
-  static const SortDirection SORT_DIRECTION_UNSPECIFIED =
-      SortDirection._(0, _omitEnumNames ? '' : 'SORT_DIRECTION_UNSPECIFIED');
-  static const SortDirection SORT_DIRECTION_ASCENDING =
-      SortDirection._(1, _omitEnumNames ? '' : 'SORT_DIRECTION_ASCENDING');
-  static const SortDirection SORT_DIRECTION_DESCENDING =
-      SortDirection._(2, _omitEnumNames ? '' : 'SORT_DIRECTION_DESCENDING');
+  static const SortDirection SORT_DIRECTION_UNSPECIFIED = SortDirection._(0, _omitEnumNames ? '' : 'SORT_DIRECTION_UNSPECIFIED');
+  static const SortDirection SORT_DIRECTION_ASCENDING = SortDirection._(1, _omitEnumNames ? '' : 'SORT_DIRECTION_ASCENDING');
+  static const SortDirection SORT_DIRECTION_DESCENDING = SortDirection._(2, _omitEnumNames ? '' : 'SORT_DIRECTION_DESCENDING');
 
-  static const $core.List<SortDirection> values = <SortDirection>[
+  static const $core.List<SortDirection> values = <SortDirection> [
     SORT_DIRECTION_UNSPECIFIED,
     SORT_DIRECTION_ASCENDING,
     SORT_DIRECTION_DESCENDING,
   ];
 
-  static final $core.Map<$core.int, SortDirection> _byValue =
-      $pb.ProtobufEnum.initByValue(values);
+  static final $core.Map<$core.int, SortDirection> _byValue = $pb.ProtobufEnum.initByValue(values);
   static SortDirection? valueOf($core.int value) => _byValue[value];
+
+  const SortDirection._($core.int v, $core.String n) : super(v, n);
 }
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

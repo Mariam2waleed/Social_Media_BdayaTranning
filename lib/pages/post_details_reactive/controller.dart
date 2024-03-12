@@ -5,9 +5,11 @@ import 'package:go_router/go_router.dart';
 // import 'package:reactive_forms/reactive_forms.dart';
 import 'package:reactive_forms_annotations/reactive_forms_annotations.dart';
 import 'package:social_media/gen/bdaya/social_training_local/v1/forms.pb.dart';
+import 'package:social_media/gen/google/protobuf/wrappers.pb.dart';
 import 'package:social_media/pages/post_details_reactive/form.dart';
 import 'package:social_media/services/posts_service.dart';
 import 'package:social_media/services/routing_service.dart';
+import 'package:uuid/uuid.dart';
 
 @lazySingleton
 class PostDetailsReactiveController extends BdayaCombinedRouteController {
@@ -37,8 +39,29 @@ class PostDetailsReactiveController extends BdayaCombinedRouteController {
   final initialModelRx = SharedValue<PostDetailsReactiveModel>(
     value: const PostDetailsReactiveModel(),
   );
+  final formVersionRx = SharedValue(value: 0);
   final formGroupRx = SharedValue<PostDetailsReactiveModelForm?>(value: null);
 
+  void assignFormToDetails(PostDetailsDto? details) {
+    initialModelRx.$ = PostDetailsReactiveModel(
+      name: details?.hasName() ?? false ? details!.name.value : null,
+      addresses: details == null
+          ? []
+          : details.addresses
+              .map(
+                (e) => Address(
+                  id: e.id,
+                  line1: e.hasLine1() ? e.line1.value : null,
+                  line2: e.hasLine2() ? e.line2.value : null,
+                  postalCode: e.hasPostalCode() ? e.postalCode.value : null,
+                ),
+              )
+              .toList(),
+    );
+    formVersionRx.$++;
+  }
+
+  // Stream
   @override
   void beforeRender(BuildContext context) {
     super.beforeRender(context);
@@ -54,23 +77,7 @@ class PostDetailsReactiveController extends BdayaCombinedRouteController {
       }),
     );
     registerStream(
-      detailsRx.streamWithInitial.listen((details) {
-        initialModelRx.$ = PostDetailsReactiveModel(
-          name: details?.hasName() ?? false ? details!.name.value : null,
-          addresses: details == null
-              ? []
-              : details.addresses
-                  .map(
-                    (e) => Address(
-                      id: e.id,
-                      line1: e.hasLine1() ? e.line1.value : null,
-                      line2: e.hasLine2() ? e.line2.value : null,
-                      postalCode: e.hasPostalCode() ? e.postalCode.value : null,
-                    ),
-                  )
-                  .toList(),
-        );
-      }),
+      detailsRx.streamWithInitial.listen(assignFormToDetails),
     );
   }
 
@@ -87,11 +94,24 @@ class PostDetailsReactiveController extends BdayaCombinedRouteController {
 
   void submit(PostDetailsReactiveModelForm formGroup) {
     final model = formGroup.model;
-    logger.info(model);
+    final mapped = PostDetailsDto(
+      id: idRx.$ ?? const Uuid().v4(),
+      name: model.name == null ? null : StringValue(value: model.name),
+      addresses: model.addresses.map(
+        (e) => AddressDto(
+          id: e.id,
+          line1: e.line1 == null ? null : StringValue(value: e.line1),
+          line2: e.line2 == null ? null : StringValue(value: e.line2),
+          postalCode:
+              e.postalCode == null ? null : StringValue(value: e.postalCode),
+        ),
+      ),
+    );
+    logger.info(mapped.toProto3Json());
+    
   }
 
   void reset(PostDetailsReactiveModelForm formGroup) {
-    formGroup.reset();
-    formGroup.addressesControl.clear();
+    assignFormToDetails(detailsRx.$);
   }
 }

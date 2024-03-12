@@ -15,38 +15,38 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'package:social_media/gen/bdaya/social_training/v1/service.pb.dart' as $0;
+import 'service.pb.dart' as $0;
 
 export 'service.pb.dart';
 
 @$pb.GrpcServiceName('bdaya.social_training.v1.PostService')
 class PostServiceClient extends $grpc.Client {
-
-  PostServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors,})
-      : super(channel, options: options,
-        interceptors: interceptors,);
   static final _$listPosts = $grpc.ClientMethod<$0.ListPostsRequest, $0.ListPostsResponse>(
       '/bdaya.social_training.v1.PostService/ListPosts',
       ($0.ListPostsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.ListPostsResponse.fromBuffer(value),);
+      ($core.List<$core.int> value) => $0.ListPostsResponse.fromBuffer(value));
   static final _$getPost = $grpc.ClientMethod<$0.GetPostRequest, $0.GetPostResponse>(
       '/bdaya.social_training.v1.PostService/GetPost',
       ($0.GetPostRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetPostResponse.fromBuffer(value),);
+      ($core.List<$core.int> value) => $0.GetPostResponse.fromBuffer(value));
   static final _$createPost = $grpc.ClientMethod<$0.CreatePostRequest, $0.CreatePostResponse>(
       '/bdaya.social_training.v1.PostService/CreatePost',
       ($0.CreatePostRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.CreatePostResponse.fromBuffer(value),);
+      ($core.List<$core.int> value) => $0.CreatePostResponse.fromBuffer(value));
   static final _$updatePost = $grpc.ClientMethod<$0.UpdatePostRequest, $0.UpdatePostResponse>(
       '/bdaya.social_training.v1.PostService/UpdatePost',
       ($0.UpdatePostRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.UpdatePostResponse.fromBuffer(value),);
+      ($core.List<$core.int> value) => $0.UpdatePostResponse.fromBuffer(value));
   static final _$deletePost = $grpc.ClientMethod<$0.DeletePostRequest, $0.DeletePostResponse>(
       '/bdaya.social_training.v1.PostService/DeletePost',
       ($0.DeletePostRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.DeletePostResponse.fromBuffer(value),);
+      ($core.List<$core.int> value) => $0.DeletePostResponse.fromBuffer(value));
+
+  PostServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options,
+        interceptors: interceptors);
 
   $grpc.ResponseFuture<$0.ListPostsResponse> listPosts($0.ListPostsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listPosts, request, options: options);
@@ -71,6 +71,7 @@ class PostServiceClient extends $grpc.Client {
 
 @$pb.GrpcServiceName('bdaya.social_training.v1.PostService')
 abstract class PostServiceBase extends $grpc.Service {
+  $core.String get $name => 'bdaya.social_training.v1.PostService';
 
   PostServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.ListPostsRequest, $0.ListPostsResponse>(
@@ -79,37 +80,36 @@ abstract class PostServiceBase extends $grpc.Service {
         false,
         false,
         ($core.List<$core.int> value) => $0.ListPostsRequest.fromBuffer(value),
-        ($0.ListPostsResponse value) => value.writeToBuffer(),),);
+        ($0.ListPostsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetPostRequest, $0.GetPostResponse>(
         'GetPost',
         getPost_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.GetPostRequest.fromBuffer(value),
-        ($0.GetPostResponse value) => value.writeToBuffer(),),);
+        ($0.GetPostResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CreatePostRequest, $0.CreatePostResponse>(
         'CreatePost',
         createPost_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.CreatePostRequest.fromBuffer(value),
-        ($0.CreatePostResponse value) => value.writeToBuffer(),),);
+        ($0.CreatePostResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UpdatePostRequest, $0.UpdatePostResponse>(
         'UpdatePost',
         updatePost_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UpdatePostRequest.fromBuffer(value),
-        ($0.UpdatePostResponse value) => value.writeToBuffer(),),);
+        ($0.UpdatePostResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.DeletePostRequest, $0.DeletePostResponse>(
         'DeletePost',
         deletePost_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.DeletePostRequest.fromBuffer(value),
-        ($0.DeletePostResponse value) => value.writeToBuffer(),),);
+        ($0.DeletePostResponse value) => value.writeToBuffer()));
   }
-  $core.String get $name => 'bdaya.social_training.v1.PostService';
 
   $async.Future<$0.ListPostsResponse> listPosts_Pre($grpc.ServiceCall call, $async.Future<$0.ListPostsRequest> request) async {
     return listPosts(call, await request);
