@@ -60,7 +60,7 @@ android {
         versionName flutterVersionName
         manifestPlaceholders += [
             'appAuthRedirectScheme': 'com.bdayadev.social.media'
-   ]
+        ]
     }
 
     signingConfigs {

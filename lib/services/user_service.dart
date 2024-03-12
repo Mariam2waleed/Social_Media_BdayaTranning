@@ -48,6 +48,19 @@ class RealUserService extends UserService {
         const OidcClientAuthentication.none(clientId: 'interactive.public'),
     store: OidcDefaultStore(),
     settings: OidcUserManagerSettings(
+      frontChannelLogoutUri: Uri(path: 'redirect.html'),
+      uiLocales: ['ar'],
+      refreshBefore: (token) {
+        return const Duration(seconds: 1);
+      },
+      scope: ['openid', 'profile', 'email', 'offline_access'],
+      postLogoutRedirectUri: kIsWeb
+          ? Uri.parse('http://localhost:12345/redirect.html')
+          : Platform.isIOS || Platform.isMacOS || Platform.isAndroid
+              ? Uri.parse('com.bdayadev.social.media:/oauth2redirect')
+              : Platform.isWindows || Platform.isLinux
+                  ? Uri.parse('http://localhost:0')
+                  : Uri(),
       redirectUri: kIsWeb
           ? Uri.parse('http://localhost:12345/redirect.html')
           : Platform.isIOS || Platform.isMacOS || Platform.isAndroid
@@ -55,6 +68,11 @@ class RealUserService extends UserService {
               : Platform.isWindows || Platform.isLinux
                   ? Uri.parse('http://localhost:0')
                   : Uri(),
+      options: const OidcPlatformSpecificOptions(
+        web: OidcPlatformSpecificOptions_Web(
+          navigationMode: OidcPlatformSpecificOptions_Web_NavigationMode.popup,
+        ),
+      ),
     ),
   );
 
@@ -66,8 +84,8 @@ class RealUserService extends UserService {
     await userManager.init();
     userManager.userChanges().listen((event) {
       currentUserIdRx.$ = event?.uid;
+      logger.info('UserChange Stream Called, ${event?.uid}');
     });
-    // await userManager.init();
   }
 
   @override
