@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: google/protobuf/wrappers.proto
+//  source: bdaya/social_training_local/v1/forms.proto
 //
 // @dart = 2.12
 

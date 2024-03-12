@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'descriptor.pbenum.dart';
+import 'package:social_media/gen/google/protobuf/descriptor.pbenum.dart';
 
 export 'descriptor.pbenum.dart';
 

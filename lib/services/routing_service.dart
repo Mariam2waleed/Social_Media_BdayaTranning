@@ -3,9 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:social_media/pages/auth/view.dart';
 import 'package:social_media/pages/home/view.dart';
-import 'package:social_media/pages/post_details/view.dart';
+import 'package:social_media/pages/post_details_reactive/view.dart';
 import 'package:social_media/pages/posts/view.dart';
 import 'package:social_media/services/user_service.dart';
+
+const kPostId = 'postId';
 
 class AppRouteNames {
   static const auth = 'auth';
@@ -13,6 +15,7 @@ class AppRouteNames {
   static const posts = 'posts';
   static const postDetails = 'post-details';
   static const postComments = 'post-comments';
+  static const createPost = 'create-post';
   static const postLikes = 'post-likes';
   static const postShares = 'post-share';
 }
@@ -26,6 +29,14 @@ class RoutingService {
     routes: [
       // ShellRoute(routes: routes)
       // GoRouter(routes: routes)
+      //
+      // ShellRoute(
+      //   builder: (context, state, child) {
+      //     return Scaffold(
+
+      //     ),
+      //   },
+      // ),
       GoRoute(
         path: '/',
         name: AppRouteNames.home,
@@ -59,9 +70,9 @@ class RoutingService {
         },
         routes: [
           GoRoute(
-            path: '{id}',
+            path: ':$kPostId',
             name: AppRouteNames.postDetails,
-            builder: (context, state) => PostDetailsView.hooked(),
+            builder: (context, state) => PostDetailsReactiveView.hooked(),
             redirect: (context, state) {
               return null;
               //put route permissions for auth
@@ -99,6 +110,11 @@ class RoutingService {
                 },
               ),
             ],
+          ),
+          GoRoute(
+            path: 'new',
+            name: AppRouteNames.createPost,
+            builder: (context, state) => PostDetailsReactiveView.hooked(),
           ),
         ],
       ),

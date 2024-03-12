@@ -13,11 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
-
-import '../../../google/protobuf/timestamp.pb.dart' as $1;
-import 'image.pb.dart' as $3;
-import 'post.pbenum.dart';
-import 'user.pb.dart' as $2;
+import 'package:social_media/gen/bdaya/social_training/v1/image.pb.dart' as $3;
+import 'package:social_media/gen/bdaya/social_training/v1/post.pbenum.dart';
+import 'package:social_media/gen/bdaya/social_training/v1/user.pb.dart' as $2;
+import 'package:social_media/gen/google/protobuf/timestamp.pb.dart' as $1;
 
 export 'post.pbenum.dart';
 

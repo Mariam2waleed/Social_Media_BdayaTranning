@@ -26,9 +26,12 @@ class App extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        scrollBehavior: MaterialScrollBehavior().copyWith(dragDevices: {...PointerDeviceKind.values}),
+        scrollBehavior: const MaterialScrollBehavior().copyWith(
+          dragDevices: {...PointerDeviceKind.values},
+        ),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
+        debugShowCheckedModeBanner: false,
         routerConfig: getIt<RoutingService>().router,
         builder: (context, child) {
           return FutureBuilder(

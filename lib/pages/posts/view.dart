@@ -1,11 +1,10 @@
 import 'package:bdaya_flutter_common/bdaya_flutter_common.dart';
-import 'controller.dart';
 import 'package:flutter/material.dart';
+import 'package:social_media/pages/posts/controller.dart';
 
 class PostsView extends StatelessWidget {
   const PostsView({
-    super.key,
-    required this.controller,
+    required this.controller, super.key,
   });
 
   static Widget hooked({

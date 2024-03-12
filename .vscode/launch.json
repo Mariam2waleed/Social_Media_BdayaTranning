@@ -9,11 +9,14 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
+      "deviceId": "Chrome",
       "args": [
         "--flavor",
         "development",
         "--target",
-        "lib/main_development.dart"
+        "lib/main_development.dart",
+        "--web-port",
+        "12345",
       ]
     },
     {

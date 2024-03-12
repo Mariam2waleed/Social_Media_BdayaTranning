@@ -1,11 +1,13 @@
 import 'package:bdaya_flutter_common/bdaya_flutter_common.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:social_media/pages/home/controller.dart';
+import 'package:social_media/services/routing_service.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
-    super.key,
     required this.controller,
+    super.key,
   });
 
   static Widget hooked({
@@ -36,61 +38,79 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar.large(),
-          const SliverToBoxAdapter(
-            child: Text('Categories'),
+          SliverAppBar.large(
+            title: const Text('Social Media'),
+            actions: [
+              IconButton(
+                onPressed: () {
+                  context.goNamed(AppRouteNames.createPost);
+                },
+                icon: const Icon(Icons.add),
+              ),
+            ],
           ),
-          Builder(
-            builder: (context) {
-              final categories =
-                  controller.categoriesService.categoriesListRx.of(context);
-              return SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 200,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: categories
-                        .map(
-                          (e) => Column(
-                            key: Key(e.id),
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.network(e.imageUrl),
-                              Text(e.name),
-                            ],
-                          ),
-                        )
-                        .toList(),
-                  ),
-                ),
-              );
-            },
-          ),
-          SliverList.builder(
-            itemCount: 20,
-            itemBuilder: (context, index) {
-              controller.logger.info('Rendering category $index');
-              return ListTile(
-                title: Text('Category: $index'),
-              );
-            },
-          ),
-          SliverToBoxAdapter(child: Text('Skin Type')),
-          SliverList.builder(
-            itemCount: 20,
-            itemBuilder: (context, index) {
-              controller.logger.info('Rendering Skin Type $index');
-              return ListTile(
-                title: Text('Skin Type: $index'),
-              );
-            },
-          ),
-          SliverToBoxAdapter(child: Text('Featued products')),
+          // const SliverToBoxAdapter(
+          //   child: Text('Categories'),
+          // ),
+          // Builder(
+          //   builder: (context) {
+          //     final categories =
+          //         controller.categoriesService.categoriesListRx.of(context);
+          //     return SliverToBoxAdapter(
+          //       child: SizedBox(
+          //         height: 200,
+          //         child: ListView(
+          //           scrollDirection: Axis.horizontal,
+          //           children: categories
+          //               .map(
+          //                 (e) => Column(
+          //                   key: Key(e.id),
+          //                   mainAxisSize: MainAxisSize.min,
+          //                   children: [
+          //                     Image.network(e.imageUrl),
+          //                     Text(e.name),
+          //                   ],
+          //                 ),
+          //               )
+          //               .toList(),
+          //         ),
+          //       ),
+          //     );
+          //   },
+          // ),
+          // SliverList.builder(
+          //   itemCount: 20,
+          //   itemBuilder: (context, index) {
+          //     controller.logger.info('Rendering category $index');
+          //     return ListTile(
+          //       title: Text('Category: $index'),
+          //     );
+          //   },
+          // ),
+          // const SliverToBoxAdapter(child: Text('Skin Type')),
+          // SliverList.builder(
+          //   itemCount: 20,
+          //   itemBuilder: (context, index) {
+          //     controller.logger.info('Rendering Skin Type $index');
+          //     return ListTile(
+          //       title: Text('Skin Type: $index'),
+          //     );
+          //   },
+          // ),
+          const SliverToBoxAdapter(child: Text('Featued Posts')),
           SliverList.builder(
             itemCount: 20,
             itemBuilder: (context, index) {
               controller.logger.info('Rendering Featued products $index');
               return ListTile(
+                onTap: () {
+                  context.goNamed(
+                    AppRouteNames.postDetails,
+                    pathParameters: {
+                      kPostId: index.toString(),
+                    },
+                  );
+                },
                 title: Text('Featued products: $index'),
               );
             },

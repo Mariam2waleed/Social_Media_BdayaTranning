@@ -32,7 +32,14 @@ final $typed_data.Uint8List categoryDtoDescriptor = $convert.base64Decode(
 const TestOptions$json = {
   '1': 'TestOptions',
   '2': [
-    {'1': 'current_sort_direction', '3': 1, '4': 1, '5': 14, '6': '.bdaya.social_training.v1.SortDirection', '10': 'currentSortDirection'},
+    {
+      '1': 'current_sort_direction',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.bdaya.social_training.v1.SortDirection',
+      '10': 'currentSortDirection',
+    },
   ],
 };
 
@@ -40,4 +47,3 @@ const TestOptions$json = {
 final $typed_data.Uint8List testOptionsDescriptor = $convert.base64Decode(
     'CgtUZXN0T3B0aW9ucxJdChZjdXJyZW50X3NvcnRfZGlyZWN0aW9uGAEgASgOMicuYmRheWEuc2'
     '9jaWFsX3RyYWluaW5nLnYxLlNvcnREaXJlY3Rpb25SFGN1cnJlbnRTb3J0RGlyZWN0aW9u');
-

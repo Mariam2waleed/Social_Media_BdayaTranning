@@ -1,13 +1,13 @@
 import 'package:bdaya_flutter_common/bdaya_flutter_common.dart';
-import 'package:social_media/get_it_config.dart';
-import 'package:social_media/services/user_service.dart';
-import 'controller.dart';
 import 'package:flutter/material.dart';
+import 'package:social_media/get_it_config.dart';
+import 'package:social_media/pages/auth/controller.dart';
+import 'package:social_media/services/user_service.dart';
 
 class AuthView extends StatelessWidget {
   const AuthView({
-    super.key,
     required this.controller,
+    super.key,
   });
 
   static Widget hooked({

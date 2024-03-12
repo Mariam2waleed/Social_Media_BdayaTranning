@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package bdaya.social_training_local.v1;
+
+import "google/protobuf/wrappers.proto";
+import "bdaya/social_training/v1/common.proto";
+
+message PostDetailsDto {
+    string id = 1;
+    google.protobuf.StringValue name = 2;
+    repeated AddressDto addresses = 3;
+}
+
+
+message AddressDto {
+    string id = 1;
+    google.protobuf.StringValue line1 = 2;
+    google.protobuf.StringValue line2 = 3;
+    google.protobuf.StringValue postal_code = 4;
+}

@@ -15,12 +15,12 @@ class CustomNotFoundWidget extends StatelessWidget {
             'Page not found',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 20.0,
+              fontSize: 20, //.0,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 20.0),
+          const SizedBox(height: 20),  //.0),
           ElevatedButton(
             onPressed: () {
               final router = GoRouter.of(context);

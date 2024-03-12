@@ -23,7 +23,7 @@ const DoubleValue$json = {
 
 /// Descriptor for `DoubleValue`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List doubleValueDescriptor = $convert.base64Decode(
-    'CgtEb3VibGVWYWx1ZRIUCgV2YWx1ZRgBIAEoAVIFdmFsdWU=');
+    'CgtEb3VibGVWYWx1ZRIUCgV2YWx1ZRgBIAEoAVIFdmFsdWU=',);
 
 @$core.Deprecated('Use floatValueDescriptor instead')
 const FloatValue$json = {
@@ -35,7 +35,7 @@ const FloatValue$json = {
 
 /// Descriptor for `FloatValue`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List floatValueDescriptor = $convert.base64Decode(
-    'CgpGbG9hdFZhbHVlEhQKBXZhbHVlGAEgASgCUgV2YWx1ZQ==');
+    'CgpGbG9hdFZhbHVlEhQKBXZhbHVlGAEgASgCUgV2YWx1ZQ==',);
 
 @$core.Deprecated('Use int64ValueDescriptor instead')
 const Int64Value$json = {
@@ -47,7 +47,7 @@ const Int64Value$json = {
 
 /// Descriptor for `Int64Value`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List int64ValueDescriptor = $convert.base64Decode(
-    'CgpJbnQ2NFZhbHVlEhQKBXZhbHVlGAEgASgDUgV2YWx1ZQ==');
+    'CgpJbnQ2NFZhbHVlEhQKBXZhbHVlGAEgASgDUgV2YWx1ZQ==',);
 
 @$core.Deprecated('Use uInt64ValueDescriptor instead')
 const UInt64Value$json = {
@@ -59,7 +59,7 @@ const UInt64Value$json = {
 
 /// Descriptor for `UInt64Value`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List uInt64ValueDescriptor = $convert.base64Decode(
-    'CgtVSW50NjRWYWx1ZRIUCgV2YWx1ZRgBIAEoBFIFdmFsdWU=');
+    'CgtVSW50NjRWYWx1ZRIUCgV2YWx1ZRgBIAEoBFIFdmFsdWU=',);
 
 @$core.Deprecated('Use int32ValueDescriptor instead')
 const Int32Value$json = {
@@ -71,7 +71,7 @@ const Int32Value$json = {
 
 /// Descriptor for `Int32Value`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List int32ValueDescriptor = $convert.base64Decode(
-    'CgpJbnQzMlZhbHVlEhQKBXZhbHVlGAEgASgFUgV2YWx1ZQ==');
+    'CgpJbnQzMlZhbHVlEhQKBXZhbHVlGAEgASgFUgV2YWx1ZQ==',);
 
 @$core.Deprecated('Use uInt32ValueDescriptor instead')
 const UInt32Value$json = {
@@ -83,7 +83,7 @@ const UInt32Value$json = {
 
 /// Descriptor for `UInt32Value`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List uInt32ValueDescriptor = $convert.base64Decode(
-    'CgtVSW50MzJWYWx1ZRIUCgV2YWx1ZRgBIAEoDVIFdmFsdWU=');
+    'CgtVSW50MzJWYWx1ZRIUCgV2YWx1ZRgBIAEoDVIFdmFsdWU=',);
 
 @$core.Deprecated('Use boolValueDescriptor instead')
 const BoolValue$json = {
@@ -95,7 +95,7 @@ const BoolValue$json = {
 
 /// Descriptor for `BoolValue`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List boolValueDescriptor = $convert.base64Decode(
-    'CglCb29sVmFsdWUSFAoFdmFsdWUYASABKAhSBXZhbHVl');
+    'CglCb29sVmFsdWUSFAoFdmFsdWUYASABKAhSBXZhbHVl',);
 
 @$core.Deprecated('Use stringValueDescriptor instead')
 const StringValue$json = {
@@ -107,7 +107,7 @@ const StringValue$json = {
 
 /// Descriptor for `StringValue`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List stringValueDescriptor = $convert.base64Decode(
-    'CgtTdHJpbmdWYWx1ZRIUCgV2YWx1ZRgBIAEoCVIFdmFsdWU=');
+    'CgtTdHJpbmdWYWx1ZRIUCgV2YWx1ZRgBIAEoCVIFdmFsdWU=',);
 
 @$core.Deprecated('Use bytesValueDescriptor instead')
 const BytesValue$json = {
@@ -119,5 +119,4 @@ const BytesValue$json = {
 
 /// Descriptor for `BytesValue`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List bytesValueDescriptor = $convert.base64Decode(
-    'CgpCeXRlc1ZhbHVlEhQKBXZhbHVlGAEgASgMUgV2YWx1ZQ==');
-
+    'CgpCeXRlc1ZhbHVlEhQKBXZhbHVlGAEgASgMUgV2YWx1ZQ==',);
