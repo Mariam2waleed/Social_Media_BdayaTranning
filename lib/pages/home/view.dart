@@ -111,7 +111,7 @@ class HomeView extends StatelessWidget {
                     },
                   );
                 },
-                title: Text('Featued products: $index'),
+                title: Text('Featured products: $index'),
               );
             },
           ),
