@@ -18,7 +18,7 @@ dependencies:
   go_router: ^13.1.0
   grpc: ^3.2.4
   injectable: ^2.3.2
-  intl: ^0.18.0
+  intl: ^0.18.0   #Localization
   oidc: ^0.5.1
   oidc_default_store: ^0.2.0+7
   protobuf: ^3.1.0
@@ -56,3 +56,16 @@ flutter:
     - assets/images/    ###
     - assets/colors/    ###
   generate: true
+
+## Linux setUp
+# parts:
+#   uet-lms:
+#     source: .
+#     plugin: flutter
+#     flutter-target: lib/main.dart
+#     build-packages:
+#       - libsecret-1-dev
+#       - libjsoncpp-dev
+#     stage-packages:
+#       - libsecret-1-0
+#       - libjsoncpp-dev

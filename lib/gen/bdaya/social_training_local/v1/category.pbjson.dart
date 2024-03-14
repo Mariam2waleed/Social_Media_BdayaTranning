@@ -40,3 +40,4 @@ const TestOptions$json = {
 final $typed_data.Uint8List testOptionsDescriptor = $convert.base64Decode(
     'CgtUZXN0T3B0aW9ucxJdChZjdXJyZW50X3NvcnRfZGlyZWN0aW9uGAEgASgOMicuYmRheWEuc2'
     '9jaWFsX3RyYWluaW5nLnYxLlNvcnREaXJlY3Rpb25SFGN1cnJlbnRTb3J0RGlyZWN0aW9u');
+
