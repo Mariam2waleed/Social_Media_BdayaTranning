@@ -39,7 +39,7 @@ class RoutingService {
                 IconButton(
                   onPressed: () => getIt<UserService>().logout(),
                   icon: const Icon(Icons.logout),
-                )
+                ),
               ],
             ),
             body: child,

@@ -97,7 +97,7 @@ class HomeView extends StatelessWidget {
           //     );
           //   },
           // ),
-          const SliverToBoxAdapter(child: Text('Featued Posts')),
+          const SliverToBoxAdapter(child: Text('Featured Posts')),
           SliverList.builder(
             itemCount: 20,
             itemBuilder: (context, index) {

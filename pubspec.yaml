@@ -42,6 +42,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   injectable_generator: ^2.4.1
+  integration_test:
+    sdk: flutter
   mason_cli: ^0.1.0-dev.53
   mocktail: ^1.0.0
   reactive_forms_generator: ^4.5.2
