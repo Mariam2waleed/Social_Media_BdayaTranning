@@ -9,6 +9,7 @@ import 'package:social_media/get_it_config.dart';
 import 'package:social_media/l10n/l10n.dart';
 import 'package:social_media/services/init_service.dart';
 import 'package:social_media/services/routing_service.dart';
+import 'package:social_media/utils/theme/theme.dart';
 // import 'package:social_media/services/user_service.dart';
 // import 'package:social_media/test_widget/controller.dart';
 
@@ -22,15 +23,18 @@ class App extends StatelessWidget {
     return ReactiveFormConfig(
       validationMessages: {
         'startWithA': (error) => 'Value should not start with A $error',
-      },  
+      },
       child: SharedValue.wrapApp(
         MaterialApp.router(
-          theme: ThemeData(
-            appBarTheme: AppBarTheme(
-              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            ),
-            useMaterial3: true,
-          ),
+          // theme: ThemeData(
+          //   appBarTheme: AppBarTheme(
+          //     backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          //   ),
+          //   useMaterial3: true,
+          // ),
+          // themeMode: ThemeMode.system,   /// default theme is system theme
+          theme: PokeTheme.lightTheme,
+          darkTheme: PokeTheme.darkTheme,
           scrollBehavior: const MaterialScrollBehavior().copyWith(
             dragDevices: {...PointerDeviceKind.values},
           ),
