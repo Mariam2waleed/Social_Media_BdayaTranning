@@ -46,7 +46,7 @@ dev_dependencies:
   flutter_native_splash: ^2.3.10
   flutter_test:
     sdk: flutter
-  injectable_generator: ^2.4.1
+  injectable_generator: ^2.5.1
   integration_test:
     sdk: flutter
   mason_cli: ^0.1.0-dev.53
