@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:social_media/app/view/app.dart';
 import 'package:social_media/get_it_config.dart';
-import 'package:social_media/pages/post_details_reactive/view.dart';
+import 'package:social_media/src/pages/post_details_reactive/view.dart';
 // import 'package:social_media/services/init_service.dart';
 
 void main() {

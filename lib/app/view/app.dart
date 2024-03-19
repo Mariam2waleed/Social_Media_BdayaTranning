@@ -4,14 +4,12 @@ import 'package:async/async.dart';
 import 'package:bdaya_shared_value/bdaya_shared_value.dart';
 import 'package:flutter/material.dart';
 import 'package:reactive_forms_annotations/reactive_forms_annotations.dart';
-import 'package:social_media/app/view/splash.dart';
 import 'package:social_media/get_it_config.dart';
 import 'package:social_media/l10n/l10n.dart';
-import 'package:social_media/services/init_service.dart';
-import 'package:social_media/services/routing_service.dart';
-import 'package:social_media/utils/theme/theme.dart';
-// import 'package:social_media/services/user_service.dart';
-// import 'package:social_media/test_widget/controller.dart';
+import 'package:social_media/src/pages/on_boarding/view.dart';
+import 'package:social_media/src/services/init_service.dart';
+import 'package:social_media/src/services/routing_service.dart';
+import 'package:social_media/src/utils/theme/theme.dart';
 
 final memoizer = AsyncMemoizer<void>();
 
@@ -26,13 +24,8 @@ class App extends StatelessWidget {
       },
       child: SharedValue.wrapApp(
         MaterialApp.router(
-          // theme: ThemeData(
-          //   appBarTheme: AppBarTheme(
-          //     backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          //   ),
-          //   useMaterial3: true,
-          // ),
-          // themeMode: ThemeMode.system,   /// default theme is system theme
+          title: 'Poke Social Media App',
+          // -- Light & Dark Theme
           theme: PokeTheme.lightTheme,
           darkTheme: PokeTheme.darkTheme,
           scrollBehavior: const MaterialScrollBehavior().copyWith(
@@ -52,7 +45,7 @@ class App extends StatelessWidget {
                 if (snapshot.connectionState == ConnectionState.done) {
                   return child!;
                 }
-                return const SplashScreen();
+                return OnBoardingView.hooked();
               },
             );
           },

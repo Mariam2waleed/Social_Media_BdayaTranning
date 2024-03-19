@@ -1,4 +1,13 @@
 bricks:
-  bdaya_page: ^0.1.0+1
-  bdaya_route: ^0.1.0+1
-  bdaya_form: ^0.2.0+1
+  bdaya_form:
+    git:
+      url: "https://github.com/Bdaya-Dev/bricks"
+      path: bdaya_form
+  bdaya_route:
+    git:
+      url: "https://github.com/Bdaya-Dev/bricks"
+      path: bdaya_route
+  bdaya_page:
+    git:
+      url: "https://github.com/Bdaya-Dev/bricks"
+      path: bdaya_page
